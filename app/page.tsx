@@ -25,7 +25,7 @@ export default function Home() {
         </h1>
 
         <p className="apple-body md:apple-subhead text-center max-w-xl opacity-75 mb-10 md:mb-12">
-          엄선된 9인의 프로페셔널 웨딩 사회자가
+          검증된 프로페셔널 웨딩 사회자들이
           <br />
           두 분의 가장 빛나는 순간을 이끌어드립니다.
         </p>
@@ -68,13 +68,124 @@ export default function Home() {
           </h2>
 
           <p className="apple-body md:apple-subhead opacity-80 leading-relaxed">
-            쏘뉴웨딩은 검증된 9인의 웨딩 사회자와 함께합니다.
+            쏘뉴웨딩은 검증된 프로페셔널 웨딩 사회자들과 함께합니다.
             <br />
             목소리·진행력·현장 대응력을 모두 갖춘 이들이,
             <br />
             두 분의 이야기에 가장 어울리는 예식을 완성합니다.
           </p>
         </Reveal>
+      </section>
+
+      {/* ═══════════════════ TOURNAMENT BANNER ═══════════════════ */}
+      <section className="chapter-black px-6 py-20 md:py-32">
+        <div className="max-w-4xl mx-auto">
+          <Reveal className="text-center mb-12 md:mb-16">
+            <div
+              className="apple-control-emphasis mb-5 uppercase tracking-widest"
+              style={{ color: ACCENT }}
+            >
+              사회자 이상형 월드컵
+            </div>
+            <h2 className="apple-product md:apple-section mb-5 leading-tight">
+              사회자 프로필만 봐서는
+              <br />
+              목소리를 고르기 어렵죠.
+            </h2>
+            <p className="apple-body opacity-70 max-w-xl mx-auto">
+              실제 진행 음성을 1:1로 들으며 비교하는 이상형 월드컵입니다.
+              <br className="hidden md:block" />
+              끝까지 이기는 목소리가 두 분에게 가장 잘 맞는 사회자입니다.
+            </p>
+          </Reveal>
+
+          {/* 3단계 흐름 */}
+          <Reveal className="grid grid-cols-3 gap-3 md:gap-6 mb-12 md:mb-14">
+            {[
+              { step: "01", icon: "🎙️", label: "음성 듣기", desc: "두 사회자의 실제 진행 음성을 재생" },
+              { step: "02", icon: "⚡", label: "1:1 투표", desc: "더 마음에 드는 목소리에 투표" },
+              { step: "03", icon: "🏆", label: "최종 1인", desc: "모든 대결을 이긴 내 취향의 사회자 확인" },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="rounded-[18px] p-4 md:p-7 text-center"
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
+              >
+                <div className="text-2xl md:text-3xl mb-3">{item.icon}</div>
+                <div className="apple-legal uppercase tracking-widest mb-2 opacity-50" style={{ color: ACCENT }}>
+                  Step {item.step}
+                </div>
+                <div className="apple-body-emphasis mb-1.5" style={{ fontSize: "14px" }}>{item.label}</div>
+                <div className="apple-micro opacity-50 leading-relaxed hidden md:block">{item.desc}</div>
+              </div>
+            ))}
+          </Reveal>
+
+          <Reveal className="text-center">
+            <p className="apple-micro opacity-40 mb-8">무료 · 로그인 불필요 · 약 2분 소요</p>
+            <a
+              href={TOURNAMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                background: ACCENT,
+                color: "#ffffff",
+                fontWeight: 700,
+                fontSize: "17px",
+                padding: "18px 40px",
+                borderRadius: "980px",
+                boxShadow: `0 8px 32px ${ACCENT}55`,
+                textDecoration: "none",
+              }}
+            >
+              <span style={{ fontSize: "22px" }}>🏆</span>
+              <span aria-label="사회자 이상형 월드컵 하러 가기">
+                {"사회자 이상형 월드컵 하러 가기".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      display: "inline-block",
+                      animation: char === " " ? "none" : "letter-bounce 1.2s ease-in-out infinite",
+                      animationDelay: `${i * 0.06}s`,
+                    }}
+                  >{char}</span>
+                ))}
+              </span>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "3px",
+                  background: "#1d1d1f",
+                  color: ACCENT,
+                  borderRadius: "980px",
+                  padding: "3px 9px 3px 6px",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.5px",
+                  animation: "click-flash 1.6s ease-in-out infinite",
+                  position: "relative",
+                }}
+              >
+                <span style={{ animation: "click-flash 1.6s ease-in-out infinite", display: "inline-block" }}>✦</span>
+                Click
+              </span>
+            </a>
+            <style>{`
+              @keyframes letter-bounce {
+                0%, 60%, 100% { transform: translateY(0); }
+                30% { transform: translateY(-6px); }
+              }
+              @keyframes click-flash {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.35; }
+              }
+            `}</style>
+          </Reveal>
+        </div>
       </section>
 
       {/* ═══════════════════ HOSTS GRID ═══════════════════ */}
@@ -142,36 +253,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ TOURNAMENT BANNER ═══════════════════ */}
-      <section className="chapter-black px-6 py-20 md:py-28">
-        <Reveal className="max-w-4xl mx-auto text-center">
-          <div
-            className="apple-control-emphasis mb-6 uppercase tracking-widest"
-            style={{ color: ACCENT }}
-          >
-            MC Match
-          </div>
-          <h2 className="apple-product md:apple-section mb-6 leading-tight">
-            아직 못 고르셨나요?
-            <br />
-            이상형 월드컵으로 찾아보세요.
-          </h2>
-          <p className="apple-body opacity-70 max-w-xl mx-auto mb-10">
-            사회자 9인의 목소리를 1:1로 비교하다 보면,
-            <br className="hidden md:block" />
-            두 분의 예식에 어울리는 단 한 명이 남습니다.
-          </p>
-          <a
-            href={TOURNAMENT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="apple-pill apple-pill-primary-gold inline-flex"
-          >
-            나에게 맞는 사회자 찾기 &nbsp;›
-          </a>
-        </Reveal>
-      </section>
-
       {/* ═══════════════════ FINAL CLOSING (신뢰·안심 클로징) ═══════════════════ */}
       <section className="chapter-gray px-6 py-20 md:py-36">
         <div className="max-w-5xl mx-auto">
@@ -195,9 +276,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-12 md:mb-16">
             {[
               {
-                tag: "검증된 9인",
+                tag: "검증된 파트너",
                 title: "검증된 사회자만",
-                desc: "쏘뉴웨딩이 목소리·진행력·현장 대응력을 직접 확인한 9명의 사회자만 소개합니다. 예식장에서 처음 보는 사회자는 없습니다.",
+                desc: "쏘뉴웨딩이 목소리·진행력·현장 대응력을 직접 확인한 사회자만 소개합니다. 예식장에서 처음 보는 사회자는 없습니다.",
               },
               {
                 tag: "맞춤 스크립트",

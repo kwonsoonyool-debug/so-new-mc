@@ -98,7 +98,7 @@ export default function HostsGrid() {
             Our MCs
           </div>
           <h2 className="apple-product md:apple-section mb-4">
-            9인의 프로페셔널 사회자
+            쏘뉴웨딩 파트너 사회자
           </h2>
           <p className="apple-body opacity-70">
             카드를 누르면 음성 샘플과 진행 영상을 바로 확인할 수 있어요.

@@ -21,9 +21,10 @@ const notoSerifKR = Noto_Serif_KR({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mc.sonewwedding.com"),
   title: "Sonew Wedding MC · 결혼식 사회자",
   description:
-    "쏘뉴웨딩의 결혼식 사회자 소개. 엄선된 9인의 프로페셔널 웨딩 사회자가 두 분의 가장 빛나는 순간을 이끌어드립니다.",
+    "쏘뉴웨딩의 결혼식 사회자 소개. 검증된 프로페셔널 웨딩 사회자가 두 분의 가장 빛나는 순간을 이끌어드립니다.",
   keywords: [
     "결혼식 사회자",
     "웨딩 사회자",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Sonew Wedding MC · 결혼식 사회자",
-    description: "엄선된 9인의 프로페셔널 웨딩 사회자",
+    description: "검증된 프로페셔널 웨딩 사회자",
     type: "website",
     images: [
       { url: "/logo/sonew-logo.png", width: 640, height: 580, alt: "Sonew" },
