@@ -4,7 +4,7 @@ import Reveal from "./_components/Reveal";
 
 const ACCENT = "#c9a961";
 const KAKAO_URL = "https://pf.kakao.com/_BxkaYG/chat";
-const TOURNAMENT_URL = "https://sonew-mc-tournament.vercel.app";
+const TOURNAMENT_URL = "https://worldcup.sonewwedding.com";
 
 export default function Home() {
   return (
