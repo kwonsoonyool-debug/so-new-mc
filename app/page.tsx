@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HostsGrid from "./_components/HostsGrid";
 import FAQ from "./_components/FAQ";
 import Reveal from "./_components/Reveal";
@@ -45,6 +46,22 @@ export default function Home() {
           >
             사회자 보기 &nbsp;›
           </a>
+        </div>
+
+        {/* 2026 고객 만족도 1위 수상 배지 — 검은 배경이라 히어로와 자연스럽게 블렌딩 */}
+        <div className="mt-12 md:mt-16">
+          <Image
+            src="/photos/award-2026.gif"
+            alt="2026 대한민국 고객 만족도 평가 1위 — 프리미엄 브랜드 코리아 · 쏘뉴웨딩 (결혼식 에이전시 부문)"
+            width={460}
+            height={460}
+            unoptimized
+            style={{
+              borderRadius: 24,
+              width: "clamp(280px, 36vw, 460px)",
+              height: "auto",
+            }}
+          />
         </div>
       </section>
 
@@ -142,17 +159,32 @@ export default function Home() {
               }}
             >
               <span style={{ fontSize: "22px" }}>🏆</span>
-              <span aria-label="사회자 이상형 월드컵 하러 가기">
-                {"사회자 이상형 월드컵 하러 가기".split("").map((char, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      display: "inline-block",
-                      animation: char === " " ? "none" : "letter-bounce 1.2s ease-in-out infinite",
-                      animationDelay: `${i * 0.06}s`,
-                    }}
-                  >{char}</span>
-                ))}
+              <span aria-label="사회자 이상형 월드컵 하러 가기" style={{ lineHeight: 1.4 }}>
+                <span style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+                  {"사회자 이상형 월드컵".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        display: "inline-block",
+                        animation: char === " " ? "none" : "letter-bounce 1.2s ease-in-out infinite",
+                        animationDelay: `${i * 0.06}s`,
+                      }}
+                    >{char}</span>
+                  ))}
+                </span>
+                <br className="sm:hidden" />
+                <span className="sm:ml-1.5" style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+                  {"하러 가기".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        display: "inline-block",
+                        animation: char === " " ? "none" : "letter-bounce 1.2s ease-in-out infinite",
+                        animationDelay: `${(i + 11) * 0.06}s`,
+                      }}
+                    >{char}</span>
+                  ))}
+                </span>
               </span>
               <span
                 style={{
