@@ -7,7 +7,7 @@ import { useEmbedMode } from "./useEmbedMode";
 const ACCENT = "#c9a961";
 
 const MENU_ITEMS = [
-  { label: "홈", href: "#hero" },
+  { label: "홈", href: "https://www.sonewwedding.com" },
   { label: "소개", href: "#intro" },
   { label: "사회자", href: "#our-hosts" },
   { label: "진행 과정", href: "#process" },
@@ -49,9 +49,9 @@ export default function TopNav() {
         <div className="flex items-center justify-between h-[60px] md:h-[68px]">
           {/* Logo */}
           <a
-            href="#hero"
+            href="https://www.sonewwedding.com"
             className="flex items-center transition-opacity hover:opacity-85"
-            aria-label="Sonew Wedding MC"
+            aria-label="쏘뉴웨딩 메인 홈으로 이동"
           >
             <span
               style={{
