@@ -1,0 +1,539 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════
+   Sonew Wedding Singer — Design Tokens
+   Apple Design System Inspired, 3-variant comparison mode
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Apple Neutral Triad */
+  --apple-black: #000000;
+  --apple-gray: #f5f5f7;
+  --apple-white: #ffffff;
+  --apple-ink: #1d1d1f;
+  --apple-text-sec: #6e6e73;
+  --apple-border-soft: #d2d2d7;
+  --apple-border-mid: #86868b;
+  --apple-utility-dark: #424245;
+
+  /* Graphite Surfaces */
+  --apple-graphite-a: #272729;
+  --apple-graphite-b: #262629;
+  --apple-graphite-c: #28282b;
+  --apple-graphite-d: #2a2a2c;
+
+  /* Accent — Variant A: Apple Blue */
+  --apple-blue: #0071e3;
+  --apple-blue-link: #0066cc;
+  --apple-blue-bright: #2997ff;
+
+  /* Accent — Variant B: Sonew Gold */
+  --sonew-gold: #c9a961;
+  --sonew-brown: #8b7355;
+
+  /* Radius Scale (Apple) */
+  --r-tiny: 5px;
+  --r-small: 8px;
+  --r-card: 12px;
+  --r-card-lg: 18px;
+  --r-module: 28px;
+  --r-spotlight: 36px;
+  --r-capsule: 56px;
+  --r-pill: 980px;
+}
+
+@theme inline {
+  --color-apple-black: var(--apple-black);
+  --color-apple-gray: var(--apple-gray);
+  --color-apple-white: var(--apple-white);
+  --color-apple-ink: var(--apple-ink);
+  --color-apple-blue: var(--apple-blue);
+
+  --font-sans: var(--font-inter), "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-serif: var(--font-noto-serif-kr), Georgia, serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Global Base — Apple-leaning
+   ═══════════════════════════════════════════════════════════════════ */
+
+html,
+body {
+  background: var(--apple-white);
+  color: var(--apple-ink);
+  font-family: var(--font-inter), "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Apple Typography Scale
+   ═══════════════════════════════════════════════════════════════════ */
+
+.apple-hero-xl {
+  font-size: 5rem;          /* 80px */
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -1.2px;
+}
+
+.apple-hero-l {
+  font-size: 3.5rem;        /* 56px */
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.28px;
+}
+
+.apple-section {
+  font-size: 3rem;          /* 48px */
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.144px;
+}
+
+.apple-product {
+  font-size: 2.5rem;        /* 40px */
+  font-weight: 600;
+  line-height: 1.10;
+}
+
+.apple-feature {
+  font-size: 2.375rem;      /* 38px */
+  font-weight: 600;
+  line-height: 1.21;
+  letter-spacing: 0.152px;
+}
+
+.apple-promo {
+  font-size: 2rem;          /* 32px */
+  font-weight: 600;
+  line-height: 1.11;
+  letter-spacing: 0.128px;
+}
+
+.apple-card-title {
+  font-size: 1.75rem;       /* 28px */
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.196px;
+}
+
+.apple-utility-h {
+  font-size: 1.5rem;        /* 24px */
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: -0.2px;
+}
+
+.apple-subhead {
+  font-size: 1.1875rem;     /* 19px */
+  font-weight: 600;
+  line-height: 1.21;
+  letter-spacing: 0.228px;
+}
+
+.apple-body {
+  font-size: 1.0625rem;     /* 17px */
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+.apple-body-emphasis {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.374px;
+}
+
+.apple-control {
+  font-size: 0.875rem;      /* 14px */
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+}
+
+.apple-control-emphasis {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+}
+
+.apple-micro {
+  font-size: 0.75rem;       /* 12px */
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.12px;
+}
+
+.apple-legal {
+  font-size: 0.625rem;      /* 10px */
+  font-weight: 400;
+  line-height: 1.40;
+  letter-spacing: -0.08px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Apple Component Primitives
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Pill CTA (Apple signature) */
+.apple-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 980px;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.374px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.apple-pill-primary-blue {
+  background: var(--apple-blue);
+  color: var(--apple-white);
+}
+.apple-pill-primary-blue:hover {
+  background: #0077ed;
+  transform: scale(0.98);
+}
+
+.apple-pill-primary-gold {
+  background: var(--sonew-gold);
+  color: var(--apple-white);
+}
+.apple-pill-primary-gold:hover {
+  background: #b89a55;
+  transform: scale(0.98);
+}
+
+.apple-pill-dark {
+  background: var(--apple-ink);
+  color: var(--apple-white);
+}
+.apple-pill-dark:hover {
+  background: #2d2d31;
+  transform: scale(0.98);
+}
+
+.apple-pill-ghost {
+  background: transparent;
+  color: var(--apple-ink);
+  border: 1px solid var(--apple-border-mid);
+}
+.apple-pill-ghost:hover {
+  background: var(--apple-gray);
+}
+
+.apple-pill-ghost-light {
+  background: transparent;
+  color: var(--apple-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.apple-pill-ghost-light:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Text link */
+.apple-link-blue {
+  color: var(--apple-blue-link);
+  text-decoration: none;
+  font-weight: 400;
+}
+.apple-link-blue:hover {
+  text-decoration: underline;
+}
+
+.apple-link-gold {
+  color: var(--sonew-brown);
+  text-decoration: none;
+  font-weight: 500;
+}
+.apple-link-gold:hover {
+  color: var(--sonew-gold);
+}
+
+.apple-link-bright {
+  color: var(--apple-blue-bright);
+  text-decoration: none;
+}
+.apple-link-bright:hover {
+  text-decoration: underline;
+}
+
+/* Chapter backgrounds */
+.chapter-black {
+  background: var(--apple-black);
+  color: var(--apple-white);
+}
+
+.chapter-gray {
+  background: var(--apple-gray);
+  color: var(--apple-ink);
+}
+
+.chapter-white {
+  background: var(--apple-white);
+  color: var(--apple-ink);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Variant-specific Accent Utilities
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Variant A — Pure Apple Blue */
+.variant-a .accent-text { color: var(--apple-blue); }
+.variant-a .accent-bg { background: var(--apple-blue); color: white; }
+.variant-a .accent-border { border-color: var(--apple-blue); }
+
+/* Variant B — Sonew Gold */
+.variant-b .accent-text { color: var(--sonew-gold); }
+.variant-b .accent-bg { background: var(--sonew-gold); color: white; }
+.variant-b .accent-border { border-color: var(--sonew-gold); }
+
+/* Variant C — Hybrid (blue links, gold CTA) */
+.variant-c .accent-text { color: var(--apple-blue-link); }
+.variant-c .accent-bg { background: var(--sonew-gold); color: white; }
+.variant-c .accent-border { border-color: var(--sonew-gold); }
+.variant-c .hybrid-link { color: var(--apple-blue-link); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Mobile Typography Refinement
+   한글 자간/행간을 모바일에서 살짝 풀어 가독성 확보
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  .apple-hero-xl {
+    font-size: 2.75rem;       /* 44px */
+    letter-spacing: -0.5px;
+    line-height: 1.12;
+  }
+
+  .apple-hero-l {
+    font-size: 2.25rem;       /* 36px */
+    letter-spacing: -0.3px;
+    line-height: 1.18;
+  }
+
+  .apple-section {
+    font-size: 2rem;          /* 32px */
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+
+  .apple-product {
+    font-size: 1.75rem;       /* 28px */
+    letter-spacing: -0.1px;
+    line-height: 1.25;
+  }
+
+  .apple-card-title {
+    font-size: 1.25rem;       /* 20px */
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  .apple-body {
+    font-size: 1rem;          /* 16px */
+    letter-spacing: -0.1px;
+    line-height: 1.6;
+  }
+
+  .apple-subhead {
+    font-size: 1.0625rem;     /* 17px */
+    letter-spacing: 0;
+    line-height: 1.4;
+  }
+
+  /* 카드 라디우스 모바일에서 살짝 줄임 */
+  .mobile-card-radius {
+    border-radius: 20px;
+  }
+}
+
+/* 메인 페이지 하단 플로팅 카카오 CTA가 콘텐츠 끝을 가리지 않도록 안전 여백 */
+main {
+  padding-bottom: 96px;
+}
+
+/* iframe 임베드 모드(?embed=1)에서는 TopNav/하단 CTA가 숨겨지므로 여백도 제거 */
+body.embed-mode main {
+  padding-bottom: 0;
+}
+
+/* 데스크탑/모바일 공통: 페이지 하단 플로팅 카카오 CTA만 사용.
+   기존 FloatingCTA(우하단 동그란 위젯)는 사용 안 함 */
+.floating-cta-desktop-only {
+  display: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Fade-in on scroll (IntersectionObserver pair)
+   ═══════════════════════════════════════════════════════════════════ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Horizontal snap scroller (모바일 영상/카드 캐러셀)
+   ═══════════════════════════════════════════════════════════════════ */
+.snap-scroller {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 24px 8px;
+  margin: 0 -24px;
+}
+
+.snap-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-scroller > * {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Click Attractor — 싱어 카드 좌상단 "Click" 배지 어트랙터
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes click-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.45);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 6px 22px rgba(201, 169, 97, 0.75);
+  }
+}
+
+@keyframes click-shine-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes click-glow-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.click-attractor {
+  position: relative;
+  overflow: hidden;
+  animation: click-pulse 1.6s ease-in-out infinite;
+}
+
+.click-attractor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  animation: click-shine-sweep 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.click-attractor-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid #c9a961;
+  animation: click-glow-ring 1.8s ease-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .click-attractor,
+  .click-attractor::before,
+  .click-attractor-ring {
+    animation: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Kakao CTA (모달 하단 플로팅) — 펄스 글로우 + 호버
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes kakao-cta-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(254, 229, 0, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(254, 229, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(254, 229, 0, 0);
+  }
+}
+
+.kakao-cta-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kakao-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 42px rgba(254, 229, 0, 0.6),
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+.kakao-cta-button:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kakao-cta-button {
+    transition: none;
+  }
+}
